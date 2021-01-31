@@ -1,7 +1,5 @@
 ## Development
 
-****
-
 ***Note*** this page is up-to-date for 5.7 that has a new directory layout;
 in a nutshell, 5.7 comes with a clear separation between
 * what is inherited from `reveal.js` with our minor adaptations (the `rise-reveal` subdir),
