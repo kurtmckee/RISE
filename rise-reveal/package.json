@@ -32,14 +32,14 @@
     "export/reveal.js-chalkboard"
   ],
   "scripts": {
-    "build": "bash -c 'for target in copy patch; do npm run $target; done'",
-    "copy": "bash -c 'mkdir -p export; cp -r ./node_modules/reveal.js/ ./export/reveal.js/; cp -r ./node_modules/reveal.js-plugins/chalkboard ./export/reveal.js-chalkboard/'",
-    "patch": "bash -c 'for target in patch-reveal-css patch-notes patch-themes patch-chalkboard ; do npm run $target; done'",
-    "patch-reveal-css": "bash patch-reveal-css.sh",
-    "patch-notes": "bash patch-notes-plugin.sh",
-    "patch-themes": "bash patch-reveal-themes.sh",
-    "patch-chalkboard": "bash patch-chalkboard.sh",
-    "clean": "bash -c 'rm -rf node_modules export'"
+    "build": "python script.py build",
+    "copy": "python script.py copy",
+    "patch": "python script.py patch",
+    "patch-reveal-css": "python script.py patch-reveal-css",
+    "patch-notes": "python script.py patch-notes",
+    "patch-themes": "python script.py patch-reveal-themes",
+    "patch-chalkboard": "python script.py patch-chalkboard",
+    "clean": "python script.py clean"
   },
   "dependencies": {
     "reveal.js": "~3.9.2",
