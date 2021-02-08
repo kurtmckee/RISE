@@ -29,11 +29,11 @@
   },
   "main": "rise/static/main.js",
   "scripts": {
-    "build": "bash -c 'for target in less install-rise-reveal; do npm run $target; done'",
-    "less": "PATH=./node_modules/.bin:$PATH lessc --autoprefix src/less/main.less rise/static/main.css",
-    "watch-less": "./node_modules/.bin/watch 'npm run less' src/less",
-    "install-rise-reveal": "cp -r node_modules/rise-reveal/export/ rise/static/",
-    "clean": "rm -rf rise/static/main.css node_modules rise/static/reveal.js*"
+    "build": "python script.py less install-rise-reveal",
+    "less": "python script.py less",
+    "watch-less": "python script.py watch-less",
+    "install-rise-reveal": "python script.py install-rise-reveal",
+    "clean": "python script.py clean"
   },
   "devDependencies": {
     "less": "~2.7.2",
