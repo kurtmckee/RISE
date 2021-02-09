@@ -190,6 +190,16 @@ def clean():
         shutil.rmtree(root / 'export')
 
 
-if __name__ == '__main__':
+def main():
+    try:
+        subprocess.check_output(['git', '--version'])
+    except subprocess.CalledProcessError:
+        print('Unable to run git. Please ensure it is on the PATH.')
+        return
+
     for arg in sys.argv[1:]:
         globals()[arg.replace('-', '_')]()
+
+
+if __name__ == '__main__':
+    main()
